@@ -42,7 +42,7 @@ export function HeroSection({ title, subtitle, ctaText, ctaLink }: HeroSectionPr
             className="hidden lg:block relative"
           >
             <div className="absolute -inset-4">
-              <div className="w-full h-full bg-gradient-to-r from-blue-50 to-purple-50 opacity-50 blur-3xl" />
+              <div className="w-full h-full bg-gradient-to-r from-blue-50 to-purple-50 opacity-50 blur-2xl" />
             </div>
             <div className="relative">
               <HeroIllustration />

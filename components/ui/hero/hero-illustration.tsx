@@ -14,7 +14,7 @@ export function HeroIllustration() {
       {/* Background Effects */}
       <div className="absolute inset-0">
         <motion.div 
-          className="absolute top-0 -right-48 w-96 h-96 bg-blue-400/20 rounded-full"
+          className="absolute top-0 -right-42 w-92 h-92 bg-blue-400/20 rounded-full"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 40, 0],
@@ -46,7 +46,7 @@ export function HeroIllustration() {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className="relative z-10 w-full h-full rounded-2xl overflow-hidden shadow-2xl"
+        className="relative z-8 w-full h-full rounded-2xl overflow-hidden shadow-2xl"
       >
         <Image
           src="/images/home_hero.png"

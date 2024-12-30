@@ -99,7 +99,7 @@ export async function POST(request: Request) {
               You are an expert in crafting professional, client-focused proposals. Create a proposal based on the input provided.
 
               **Guidelines:**
-              - Use exactly 7 numbered sections as listed below. Do not add extra sections.
+              - Use exactly 6 numbered sections as listed below. Do not add extra sections.
               - Use alphabetical bullets (a), b), c.), etc.) for subpoints or lists within the sections.
               - Ensure the tone is professional, engaging, and focused on addressing the client's needs.
               - Avoid unnecessary formatting like bold or italics, but prioritize logical flow and readability.
@@ -111,8 +111,7 @@ export async function POST(request: Request) {
               4. **Proposed Solution**: Provide a concise and tailored solution that addresses the client's objectives in detail.
               5. **Operating Model**: Explain the processes, frameworks, and methodologies you'll use to deliver results effectively.
               6. **Engagement Roadmap**: Outline a step-by-step plan or timeline, emphasizing milestones and actionable next steps.
-              7. **Value Proposition**: Include a short section summarizing the unique value you bring to the engagement.
-
+             
               Do not include any additional sections. Follow the exact structure above.
             `,
           },

@@ -5,8 +5,8 @@ import path from "path";
 
 // Define types for the request body
 interface GeneratePart2Request {
-  companyName: string; // Input for "Your Company Name"
-  clientName: string;  // Input for "Client Name"
+  companyName: string;
+  clientName: string;
   model: "gpt-3.5-turbo" | "gpt-4o-mini";
 }
 
@@ -65,6 +65,11 @@ export async function POST(request: Request) {
       );
     }
 
+    // Customize the template with company and client names
+    const customizedTemplate = proposalTemplate
+      .replace(/\{\{ Your Company Name \}\}/g, companyName)
+      .replace(/\{\{ Client Name \}\}/g, clientName);
+
     // Initialize OpenAI client
     const openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
@@ -76,40 +81,35 @@ export async function POST(request: Request) {
       messages: [
         {
           role: "system",
-          content: `
-            You are a highly skilled professional proposal writer with expertise in crafting tailored and persuasive business proposals. The earlier sections of this proposal (from the Thank You Note to the Engagement Roadmap) have already been written. Your task is to complete the remaining sections, ensuring they align with the proposal’s tone, structure, and focus on client value.
+          content: `You are a highly skilled professional proposal writer creating a proposal for ${companyName} to present to ${clientName}. The earlier sections of this proposal have already been written. Your task is to complete the remaining sections, ensuring they are specifically tailored to showcase ${companyName}'s unique value proposition to ${clientName}.
 
-            **Strict Instructions:**
-            - Generate content ONLY for the following sections, without adding or repeating information.
-            - Do NOT modify or reference the earlier sections unless specifically required.
+Strict Instructions:
+- Generate content ONLY for the following sections, customizing each for ${clientName}'s specific context
+- Reference ${companyName} by name when discussing capabilities and solutions
+- Make all examples and success stories relevant to ${clientName}'s industry and needs
+- Ensure all sections emphasize the unique partnership between ${companyName} and ${clientName}
 
-            **Formatting Guidelines:**
-            - Use numbered sections (8., 9., 10., etc.) for main sections.
-            - Use alphabetical bullets (a), b), c), etc., for subpoints or lists.
-            - Avoid using special formatting like bold or italics; rely on clarity and logical structure.
+Formatting Guidelines:
+- Use numbered sections (8., 9., 10., etc.) for main sections
+- Use alphabetical bullets (a), b), c), etc., for subpoints or lists
+- Avoid using special formatting like bold or italics; rely on clarity and logical structure
 
-            **Sections to Generate:**
-            8. **Transition - Land Safe**: Outline how the transition to your proposed solution will be managed smoothly. Include risk mitigation strategies and steps to ensure a seamless handover.
-            9. **Run Better - Driving Continuous Service Improvements**: Describe strategies for ongoing optimization of the client’s operations, focusing on efficiency, cost savings, and measurable benefits.
-            10. **Run Different -Bringing Enhancements**: Highlight innovative solutions or enhancements that differentiate your approach and provide long-term strategic advantages to the client.
-            11. **Success Stories**: Share brief and impactful examples of previous successful projects. Ensure the stories align with the client’s objectives and showcase measurable results.
-            12. **Why Us as Your Partner**: Summarize your unique strengths, experience, and the specific reasons why your partnership is the ideal choice for achieving the client’s goals.
+Sections to Generate:
+7. Transition - Land Safe: Detail how ${companyName} will manage the transition process for ${clientName}, including specific risk mitigation strategies
+8. Run Better - Driving Continuous Service Improvements: Describe ${companyName}'s approach to optimizing ${clientName}'s operations
+9. Run Different - Bringing Enhancements: Highlight ${companyName}'s innovative solutions specifically beneficial for ${clientName}
+10. Success Stories: Share relevant examples of ${companyName}'s success with similar clients in ${clientName}'s industry
+11. Why ${companyName} as ${clientName}'s Partner: Emphasize why ${companyName} is uniquely positioned to serve ${clientName}'s needs
 
-            **Additional Constraints:**
-            - Use concise and non-redundant language.
-            - Do NOT include additional sections or repeat any content within the sections.
-            - Each section should have a logical flow, with each sentence adding value.
-            - Ensure the tone is professional, persuasive, and client-centric.
-
-            Your goal is to deliver content that complements the earlier sections and strengthens the overall proposal by reinforcing trust and showcasing value. Do NOT include unrelated or generic content. Focus only on the above sections.
-          `,
+Additional Constraints:
+- Use concise and non-redundant language
+- Each section should directly address ${clientName}'s specific needs and context
+- Maintain a professional yet personal tone that builds trust between ${companyName} and ${clientName}
+- Focus on tangible benefits and measurable outcomes specific to ${clientName}`,
         },
         {
           role: "user",
-          content: `
-            Use this template as the basis for your output:
-            ${proposalTemplate}
-          `,
+          content: customizedTemplate,
         },
       ],
       temperature: MODEL_CONFIGS[model].temperature,

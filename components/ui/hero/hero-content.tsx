@@ -33,8 +33,8 @@ export function HeroContent({ title, subtitle, ctaText, ctaLink }: HeroContentPr
           AI-Powered Platform
         </motion.div>
 
-        {/* Brand Name */}
-        <div className="text-6xl sm:text-7xl md:text-8xl font-bold mb-8">
+        {/* Brand Name (reduced font size by 10%) */}
+        <div className="text-[3.375rem] sm:text-[4.05rem] md:text-[5.4rem] font-bold mb-8">
           <div className="leading-[1.2] tracking-tight">
             {brandLetters.map((letter, index) => (
               <motion.span
