@@ -82,7 +82,7 @@ export async function POST(request: Request) {
 
     // Define model configs
     const modelConfig: Record<string, ModelConfig> = {
-      "gpt-3.5-turbo": { maxTokens: 4000, temperature: 0.6 },
+      "gpt-3.5-turbo": { maxTokens: 4000, temperature: 0.7 },
       "gpt-4o-mini": { maxTokens: 2500, temperature: 0.7 },
     };
 
@@ -101,17 +101,18 @@ export async function POST(request: Request) {
             Generate a top-quality, business-savvy proposal following these rules:
 
             • Use numbered sections (1., 2., 3., etc.) for main sections
+            Each section should be descriptive 
             • Only if required, Use alphabetical bullets (a), b), c), etc. for subpoints/lists
             • Do not use bold, italics, or special formatting for subsections or bullet points
-            DO NOT INCLUDE THANK YOU or any content AFTER SECTION 5.             
+    
             • Include ONLY the following sections in numbered format:
-              Thank You 
-              1. Understanding Client Objectives
-              2. Capabilities Overview
-              3. Proposed Solution
-              4. Operating Model
-              5. Engagement Roadmap
-
+              1. Thank You 
+              2. Understanding Client Objectives
+              3. Capabilities Overview
+              4. Proposed Solution
+              5. Operating Model
+              6. Engagement Roadmap
+ DO NOT INCLUDE any content AFTER SECTION "ENGAGEMENT ROADMAP".  
             Tailor the language to highlight how our solutions address the client's objectives.
             Keep it concise, clear, and directly relevant to the client's needs.
             `,
