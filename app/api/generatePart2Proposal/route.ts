@@ -94,11 +94,11 @@ Strict Formatting Rules:
             • Do not use bold, italics, or special formatting for subsections or bullet points
 
 Sections to Generate:
-7. Transition – Land Safe
-8. Driving Continuous Service Improvement– Run Better
-9. Bringing Tranformation– Run Different 
-10. Success Stories
-11. Why ${companyName} as ${clientName}'s Partner
+6. Transition – Land Safe
+7. Driving Continuous Service Improvement– Run Better
+8. Bringing Tranformation– Run Different 
+9. Success Stories
+10. Why ${companyName} as ${clientName}'s Partner
 
 Key Requirements:
 • Reference ${companyName} by name when showcasing capabilities and solutions

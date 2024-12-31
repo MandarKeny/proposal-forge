@@ -103,13 +103,15 @@ export async function POST(request: Request) {
             • Use numbered sections (1., 2., 3., etc.) for main sections
             • Use alphabetical bullets (a), b), c), etc. for subpoints/lists
             • Do not use bold, italics, or special formatting for subsections or bullet points
+            DO NOT INCLUDE THANK YOU or any content AFTER SECTION 5. 
+            DO NOT NUMBER THANK YOU section
             • Include ONLY the following sections in numbered format:
-              1. Thank You Note
-              2. Understanding Client Objectives
-              3. Capabilities Overview
-              4. Proposed Solution
-              5. Operating Model
-              6. Engagement Roadmap
+              Thank You 
+              1. Understanding Client Objectives
+              2. Capabilities Overview
+              3. Proposed Solution
+              4. Operating Model
+              5. Engagement Roadmap
 
             Tailor the language to highlight how our solutions address the client's objectives.
             Keep it concise, clear, and directly relevant to the client's needs.
