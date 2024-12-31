@@ -18,7 +18,7 @@ interface ModelConfig {
 
 // Model configurations
 const MODEL_CONFIGS: Record<string, ModelConfig> = {
-  "gpt-3.5-turbo": { maxTokens: 2000, temperature: 0.7 },
+  "gpt-3.5-turbo": { maxTokens: 3000, temperature: 0.7 },
   "gpt-4o-mini": { maxTokens: 2000, temperature: 0.7 },
 };
 
@@ -89,15 +89,14 @@ Ensure that the content is tailored to ${clientName}'s specific business context
 ${companyName} brings, and maintains a structured, professional tone.
 
 Strict Formatting Rules:
-• Use numbered sections (7., 8., 9., etc.) for main sections
-• Use alphabetical bullets (a), b), c), etc. for subpoints or lists
-• Do not apply bold, italics, or additional special formatting
-• Keep the language concise and business-oriented
+ • Use numbered sections (1., 2., 3., etc.) for main sections
+            • Use alphabetical bullets (a), b), c), etc. for subpoints/lists
+            • Do not use bold, italics, or special formatting for subsections or bullet points
 
 Sections to Generate:
 7. Transition – Land Safe
-8. Run Better – Driving Continuous Service Improvements
-9. Run Different – Bringing Enhancements
+8. Driving Continuous Service Improvement– Run Better
+9. Bringing Tranformation– Run Different 
 10. Success Stories
 11. Why ${companyName} as ${clientName}'s Partner
 

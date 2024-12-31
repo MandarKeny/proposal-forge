@@ -36,11 +36,11 @@ export function ResultHeader({ companyName, clientName }: ResultHeaderProps) {
           transition={{ delay: 0.2 }}
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-            {companyName}'s
+          {companyName}'s
           </span>{" "}
           proposal for{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
-            {clientName}
+          {clientName}
           </span>
         </motion.h1>
 

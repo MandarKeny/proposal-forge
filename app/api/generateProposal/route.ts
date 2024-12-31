@@ -82,7 +82,7 @@ export async function POST(request: Request) {
 
     // Define model configs
     const modelConfig: Record<string, ModelConfig> = {
-      "gpt-3.5-turbo": { maxTokens: 3000, temperature: 0.7 },
+      "gpt-3.5-turbo": { maxTokens: 4000, temperature: 0.6 },
       "gpt-4o-mini": { maxTokens: 2500, temperature: 0.7 },
     };
 
