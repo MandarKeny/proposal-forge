@@ -101,10 +101,9 @@ export async function POST(request: Request) {
             Generate a top-quality, business-savvy proposal following these rules:
 
             • Use numbered sections (1., 2., 3., etc.) for main sections
-            • Use alphabetical bullets (a), b), c), etc. for subpoints/lists
+            • Only if required, Use alphabetical bullets (a), b), c), etc. for subpoints/lists
             • Do not use bold, italics, or special formatting for subsections or bullet points
-            DO NOT INCLUDE THANK YOU or any content AFTER SECTION 5. 
-            DO NOT NUMBER THANK YOU section
+            DO NOT INCLUDE THANK YOU or any content AFTER SECTION 5.             
             • Include ONLY the following sections in numbered format:
               Thank You 
               1. Understanding Client Objectives
