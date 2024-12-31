@@ -46,7 +46,7 @@ export default function ResultPage() {
 
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           <ProposalContent
-            title="Core Solution"
+            title="The core solution and operating model"
             content={proposalPart1}
             variant="primary"
             isLoading={isPart1Loading}
@@ -54,7 +54,7 @@ export default function ResultPage() {
           />
 
           <ProposalContent
-            title="Execution and Value Adds"
+            title="Detailed execution approach and Value Adds"
             content={proposalPart2}
             variant="secondary"
             isLoading={isPart2Loading}
