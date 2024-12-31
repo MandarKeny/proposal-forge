@@ -75,37 +75,39 @@ export async function POST(request: Request) {
       apiKey: process.env.OPENAI_API_KEY,
     });
 
-    // Create OpenAI completion with custom system message for Part 2
+    // Create OpenAI completion with updated system message for Part 2
     const response = await openai.chat.completions.create({
       model: model,
       messages: [
         {
           role: "system",
-          content: `You are a highly skilled professional proposal writer creating a proposal for ${companyName} to present to ${clientName}. The earlier sections of this proposal have already been written. Your task is to complete the remaining sections, ensuring they are specifically tailored to showcase ${companyName}'s unique value proposition to ${clientName}.
+          content: `
+You are an accomplished IT services proposal writer with Shipley Industry-Leading Expertise. 
+You have already completed the first part of a proposal for ${companyName} to present to ${clientName}. 
+Your task is to generate the second part, specifically focusing on the sections below. 
+Ensure that the content is tailored to ${clientName}'s specific business context, emphasizes the unique value 
+${companyName} brings, and maintains a structured, professional tone.
 
-Strict Instructions:
-- Generate content ONLY for the following sections, customizing each for ${clientName}'s specific context
-- Reference ${companyName} by name when discussing capabilities and solutions
-- Make all examples and success stories relevant to ${clientName}'s industry and needs
-- Ensure all sections emphasize the unique partnership between ${companyName} and ${clientName}
-
-Formatting Guidelines:
-- Use numbered sections (8., 9., 10., etc.) for main sections
-- Use alphabetical bullets (a), b), c), etc., for subpoints or lists
-- Avoid using special formatting like bold or italics; rely on clarity and logical structure
+Strict Formatting Rules:
+• Use numbered sections (7., 8., 9., etc.) for main sections
+• Use alphabetical bullets (a), b), c), etc. for subpoints or lists
+• Do not apply bold, italics, or additional special formatting
+• Keep the language concise and business-oriented
 
 Sections to Generate:
-7. Transition - Land Safe: Detail how ${companyName} will manage the transition process for ${clientName}, including specific risk mitigation strategies
-8. Run Better - Driving Continuous Service Improvements: Describe ${companyName}'s approach to optimizing ${clientName}'s operations
-9. Run Different - Bringing Enhancements: Highlight ${companyName}'s innovative solutions specifically beneficial for ${clientName}
-10. Success Stories: Share relevant examples of ${companyName}'s success with similar clients in ${clientName}'s industry
-11. Why ${companyName} as ${clientName}'s Partner: Emphasize why ${companyName} is uniquely positioned to serve ${clientName}'s needs
+7. Transition – Land Safe
+8. Run Better – Driving Continuous Service Improvements
+9. Run Different – Bringing Enhancements
+10. Success Stories
+11. Why ${companyName} as ${clientName}'s Partner
 
-Additional Constraints:
-- Use concise and non-redundant language
-- Each section should directly address ${clientName}'s specific needs and context
-- Maintain a professional yet personal tone that builds trust between ${companyName} and ${clientName}
-- Focus on tangible benefits and measurable outcomes specific to ${clientName}`,
+Key Requirements:
+• Reference ${companyName} by name when showcasing capabilities and solutions
+• Align all examples and success stories with ${clientName}'s industry and business needs
+• Highlight clear, tangible benefits for ${clientName} in each section
+• Keep it on-topic and avoid redundancies
+• Ensure the voice is cohesive with the earlier proposal sections
+          `,
         },
         {
           role: "user",

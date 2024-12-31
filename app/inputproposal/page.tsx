@@ -37,7 +37,7 @@ export default function InputProposalPage() {
     incidentTickets: 0,
     serviceRequests: 0,
     changeTickets: 0,
-    model: "gpt-4o-mini" as const,
+    model: "gpt-3.5-turbo" as const,
   });
 
   const [touchedTicketFields, setTouchedTicketFields] = useState({
