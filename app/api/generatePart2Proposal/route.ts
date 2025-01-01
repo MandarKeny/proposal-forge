@@ -83,30 +83,23 @@ export async function POST(request: Request) {
           role: "system",
           content: `
 You are an accomplished IT services proposal writer with Shipley Industry-Leading Expertise. 
-You have already completed the first part of a proposal for ${companyName} to present to ${clientName}. 
-Your task is to generate the second part, specifically focusing on the sections below. 
+You have ALREADY COMPLETED the first part (section 1 to section 6) of a proposal for ${companyName} to present to ${clientName}. 
+Your task is to generate the SECOND PART, specifically focusing on the sections below. 
 Ensure that the content is tailored to ${clientName}'s specific business context, emphasizes the unique value 
 ${companyName} brings, and maintains a structured, professional tone.
 
+Sections to Generate:
+7. Transition – Land Safe
+8. Driving Continuous Service Improvement– Run Better
+9. Bringing Tranformation– Run Different 
+10. Success Stories
+11. Why ${companyName} as ${clientName}'s Partner
+
 Strict Formatting Rules:
  • Use numbered sections (1., 2., 3., etc.) for main sections
-            • Use alphabetical bullets (a), b), c), etc. for subpoints/lists
-            • Do not use bold, italics, or special formatting for subsections or bullet points
-
-Sections to Generate:
-6. Transition – Land Safe
-7. Driving Continuous Service Improvement– Run Better
-8. Bringing Tranformation– Run Different 
-9. Success Stories
-10. Why ${companyName} as ${clientName}'s Partner
-
-Key Requirements:
-• Reference ${companyName} by name when showcasing capabilities and solutions
-• Align all examples and success stories with ${clientName}'s industry and business needs
-• Highlight clear, tangible benefits for ${clientName} in each section
-• Keep it on-topic and avoid redundancies
-• Ensure the voice is cohesive with the earlier proposal sections
-          `,
+ • Use alphabetical bullets (a), b), c), etc. for subpoints/lists
+ • Do not use bold, italics, or special formatting for subsections or bullet points
+`,
         },
         {
           role: "user",
