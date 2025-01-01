@@ -82,8 +82,8 @@ export async function POST(request: Request) {
 
     // Define model configs
     const modelConfig: Record<string, ModelConfig> = {
-      "gpt-3.5-turbo": { maxTokens: 4000, temperature: 0.7 },
-      "gpt-4o-mini": { maxTokens: 2500, temperature: 0.7 },
+      "gpt-3.5-turbo": { maxTokens: 4000, temperature: 0.8 },
+      "gpt-4o-mini": { maxTokens: 4000, temperature: 0.7 },
     };
 
     // Call the OpenAI API
@@ -104,8 +104,8 @@ export async function POST(request: Request) {
               3. Capabilities Overview
               4. Proposed Solution
               5. Operating Model
-              6. Engagement Roadmap
- DO NOT INCLUDE any content AFTER SECTION "ENGAGEMENT ROADMAP".  
+              6. Engagement Roadmap 
+ DO NOT INCLUDE any content AFTER SECTION "ENGAGEMENT ROADMAP". In engagement roadmap, do add content on land safe, run better and run different. 
  • Use numbered sections (1., 2., 3., etc.) for main sections
             Each section should be descriptive 
             • Only if required, Use alphabetical bullets (a), b), c), etc. for subpoints/lists
